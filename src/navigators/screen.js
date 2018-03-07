@@ -10,6 +10,8 @@ import { Injector } from '@middlewares'
 import {
   Launch,
   Landing,
+  SignUp,
+  Login,
   Home
 } from '@containers'
 import { connect, bindActionCreators } from '@store'
@@ -23,6 +25,12 @@ const ROUTERS = {
   },
   Landing: {
     screen: Landing,
+  },
+  SignUp: {
+    screen: SignUp
+  },
+  Login: {
+    screen: Login
   },
   Home: {
     screen: Home,
@@ -145,23 +153,25 @@ class ScreenComponent extends PureComponent {
     this._verifyNavigationState(nextNavigation, this.props.isAuthenticated)
   }
 
-  // _setupStatusBar = routeName => {
-  //   switch (routeName) {
-  //     case 'Home':
-  //       StatusBar.setBarStyle('dark-content')
-  //       break
-  //     default:
-  //       StatusBar.setBarStyle('dark-content')
-  //       break
-  //   }
-  // }
+  _setupStatusBar = routeName => {
+    switch (routeName) {
+      case 'Landing':
+      case 'SignUp':
+      case 'Login':
+        StatusBar.setBarStyle('light-content')
+        break
+      default:
+        StatusBar.setBarStyle('dark-content')
+        break
+    }
+  }
 
   _verifyNavigationState = (
     navigation = this.state.navigation,
     isAuthenticated
   ) => {
     let latestRouteName = navigation.routes[navigation.index].routeName
-    //this._setupStatusBar(latestRouteName)
+    this._setupStatusBar(latestRouteName)
     if (
       !isAuthenticated &&
       ROUTERS[latestRouteName].requireAuthentication !== false

@@ -12,6 +12,14 @@ export const toLanding = () => (dispatch, { screenNavigator }) => {
   navigate(screenNavigator, 'Landing')
 }
 
+export const toSignUp = () => (dispatch, { screenNavigator }) => {
+  navigate(screenNavigator, 'SignUp')
+}
+
+export const toLogin = () => (dispatch, { screenNavigator }) => {
+  navigate(screenNavigator, 'Login')
+}
+
 const resetTo = (screenNavigator, route) => {
   const actionToDispatch = NavigationActions.reset({
     index: 0,

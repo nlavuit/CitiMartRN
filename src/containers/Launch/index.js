@@ -13,10 +13,10 @@ import styles from './styles'
 class Launch extends BaseComponent {
   componentDidMount() {
     //this.props.sessionActions.checkAuthenticate()
-    // let that = this
-    // setTimeout(() => {
-    //   this.props.navigatorActions.toLanding()
-    // }, 2000)
+    let that = this
+    setTimeout(() => {
+      this.props.navigatorActions.toLanding()
+    }, 1000)
   }
   // componentWillReceiveProps(newProps) {
   //   if (
@@ -37,7 +37,7 @@ class Launch extends BaseComponent {
       <View style={styles.container}>
         <Image
           style={styles.logo}
-          source={require('@resources/images/logo.png')}
+          source={require('@resources/images/logoLaunch.png')}
         />
         <Image
           style={styles.line}

@@ -7,46 +7,36 @@ import { View, Image, TouchableOpacity, Text } from '@core'
 import styles from './styles'
 
 
-class Landing extends BaseComponent {
-
-  _signUpPress = () => {
-    this.props.navigatorActions.toSignUp()
-  }
-
-  _logInPress = () => {
-    this.props.navigatorActions.toLogin()
-  }
+class SignUp extends BaseComponent {
 
   render() {
     return (
       <View style={styles.container}>
         <Image
           style={styles.background}
-          source={require('@resources/images/background/landing.png')}
+          source={require('@resources/images/background/signup.png')}
         />
         <Image
           style={styles.layer}
-          source={require('@resources/images/background/opacityLayer.png')}
+          source={require('@resources/images/background/bottomLeft.png')}
         />
-        <View style={styles.viewButton}>
-          <TouchableOpacity onPress={this._signUpPress} style={styles.signup}>
-            <Text bold style={styles.textSignup}>SIGN UP</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.signinFB}>
-            <Text style={styles.textSigninFB}>Sign in with Facebook</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this._logInPress} style={styles.viewTextBottom}>
-            <Text style={styles.textAccount}>Already have an account?</Text>
-            <Text style={styles.textLogin}>Login</Text>
-          </TouchableOpacity>
+        <View style={styles.viewForm}>
+          
         </View>
       </View>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  navigatorActions: bindActionCreators(navigatorActions, dispatch)
-})
+{/* <TouchableOpacity style={styles.signup}>
+            <Text bold style={styles.textSignup}>SIGN UP</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.signinFB}>
+            <Text style={styles.textSigninFB}>Sign in with Facebook</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.viewTextBottom}>
+            <Text style={styles.textAccount}>Already have an account?</Text>
+            <Text style={styles.textLogin}>Login</Text>
+          </TouchableOpacity> */}
 
-export default connect(null, mapDispatchToProps)(Landing)
+export default connect()(SignUp)

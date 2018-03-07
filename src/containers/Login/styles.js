@@ -13,16 +13,16 @@ const rootStyles = StyleSheet.create({
   },
   background: {
     width,
-    height: width * 488 / 375
+    height: width * 333 / 375
   },
   layer: {
-    width,
-    height: width * 405 / 375,
+    width: 164 * ratioWidth,
+    height: 177 * ratioHeight,
     position: 'absolute',
-    left: 0,
+    right: 0,
     bottom: 0
   },
-  viewButton: {
+  viewForm: {
     position: 'absolute',
     width,
     height,

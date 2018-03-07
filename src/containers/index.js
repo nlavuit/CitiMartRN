@@ -1,3 +1,5 @@
 export { default as Launch } from './Launch'
 export { default as Landing } from './Landing'
+export { default as SignUp } from './SignUp'
+export { default as Login } from './Login'
 export { default as Home } from './Home'

@@ -23,9 +23,9 @@ export default {
   },
   fontFamily: {
     bold: 'OpenSans-Bold',
-    //light: '.HelveticaNeueDeskInterface-Thin',
+    light: 'OpenSans-Light',
     //medium: 'OpenSans',
-    regular: 'OpenSans',
+    regular: 'OpenSans-Regular',
   },
   palette: {
     background: {
